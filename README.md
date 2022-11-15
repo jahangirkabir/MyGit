@@ -9,7 +9,7 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 
 - MVVM
 - [Clean-Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-<img align="right" src="./img/app.gif" width="25%"></img> 
+<img align="right" src="./img/app.gif" width="30%"></img> 
 
 #### App Libraries
 
@@ -28,7 +28,7 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 - [Github Api](https://docs.github.com/en/rest/users/users) for users
 
 #### Test Libraries
-- [JUnit4](https://mockk.io/) for mocking in Unit testing
+- [JUnit4](https://mockk.io/) for Unit testing
 - [MocKK](https://mockk.io/) for mocking in Unit testing
 - [Espresso](https://developer.android.com/training/testing/espresso) for Android UI testing
 - [JaCoCo](https://github.com/jacoco/jacoco) for testing code coverage report 
