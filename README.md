@@ -2,16 +2,16 @@
 
 Demo Project with Jetpack Libraries showing Github users list and user details.
 
-<p>
-<img src="./img/app.gif" width="60%" height="60%"/>
-</p>
 
-## Architecture
+## Technologies
+
+#### Architecture
 
 - MVVM
 - [Clean-Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+<img align="right" src="./img/app.gif" width="25%"></img> 
 
-## Technologies
+#### App Libraries
 
 - [Kotlin](https://kotlinlang.org/) - %100 Kotlin
 - [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
@@ -26,7 +26,11 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 - [Retrofit](https://github.com/square/retrofit) for network operations
 - [Glide](https://github.com/bumptech/glide) for image loading
 - [Github Api](https://docs.github.com/en/rest/users/users) for users
+
+#### Test Libraries
+- [JUnit4](https://mockk.io/) for mocking in Unit testing
 - [MocKK](https://mockk.io/) for mocking in Unit testing
+- [Espresso](https://developer.android.com/training/testing/espresso) for Android UI testing
 - [JaCoCo](https://github.com/jacoco/jacoco) for testing code coverage report 
 - [LeakCanary](https://square.github.io/leakcanary/) for memory leak detection
 
@@ -50,7 +54,7 @@ clientSecret = YOUR_CLIENT_SECRET
 
 ## Future Upgrades
 
-- Update the UI to compose
+- Update the UI to [Jetpack Compose](https://developer.android.com/jetpack/compose/documentation)
 - Add load state in paging list
 - Add more details of user
 - Add sliding panel for user details
