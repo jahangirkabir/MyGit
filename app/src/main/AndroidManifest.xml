@@ -29,8 +29,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:host="mygithost"
-                    android:scheme="jksgit" />
+                    android:host="${redirectHost}"
+                    android:scheme="${redirectScheme}" />
             </intent-filter>
         </activity>
 

@@ -9,6 +9,3 @@ rootDir
         .forEach {
             include(":${it.name}")
         }
-
-//include(":features:login")
-//include(":features:repos")
