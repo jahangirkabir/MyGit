@@ -2,6 +2,7 @@
 
 Demo Project with Jetpack Libraries showing Github users list and user details.
 
+
 ## Architecture
 
 - MVVM
@@ -16,9 +17,45 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 - [Lifecycle-ktx](https://developer.android.com/kotlin/ktx)
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [Navigation](https://developer.android.com/guide/navigation)
-- [View Binding](https://developer.android.com/topic/libraries/view-binding)
+- [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) for paging in user list
+- [Data Store](https://developer.android.com/topic/libraries/architecture/datastore) to store key-value pairs 
 - [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android) for Dependency Injection
 - [Retrofit](https://github.com/square/retrofit) for network operations
 - [OkHttp](https://github.com/square/okhttp)
 - [Glide](https://github.com/bumptech/glide) for image loading
 - [Github Api](https://docs.github.com/en/rest/users/users) for users
+- [MocKK](https://mockk.io/) for mocking in Unit testing
+- [JaCoCo](https://github.com/jacoco/jacoco) for testing code coverage report 
+- [LeakCanary](https://square.github.io/leakcanary/) for memory leak detection
+
+
+## How to use
+
+- Create a [Giithub App](https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps) first and get your keys then 
+ add these lines in your local.properties and use it with [Secrets Gradle Plugin](https://github.com/google/secrets-gradle-plugin)
+
+`apiUrl=https://api.github.com/`
+
+`domainUrl=https://github.com/login/oauth/access_token`
+
+`oauthLoginURL = https://github.com/login/oauth/authorize`
+
+`redirectUri = HOST://SCHEME`
+
+`clientID = YOUR_CLIENT_ID`
+
+`clientSecret = YOUR_CLIENT_SECRET`
+
+`apiUrl=https://api.github.com/`
+
+- Now Build your project and Run
+
+## Future Upgrades
+
+- Update the UI to compose
+- Add load state in paging list
+- Add more details of user
+- Add sliding panel for user details
+- Make the app multi module
+- Make the app offline first
+- Upgrade test coverage
