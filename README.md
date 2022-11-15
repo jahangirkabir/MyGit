@@ -2,6 +2,9 @@
 
 Demo Project with Jetpack Libraries showing Github users list and user details.
 
+<p>
+<img src="./img/app.gif" width="60%" height="60%"/>
+</p>
 
 ## Architecture
 
@@ -21,7 +24,6 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 - [Data Store](https://developer.android.com/topic/libraries/architecture/datastore) to store key-value pairs 
 - [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android) for Dependency Injection
 - [Retrofit](https://github.com/square/retrofit) for network operations
-- [OkHttp](https://github.com/square/okhttp)
 - [Glide](https://github.com/bumptech/glide) for image loading
 - [Github Api](https://docs.github.com/en/rest/users/users) for users
 - [MocKK](https://mockk.io/) for mocking in Unit testing
@@ -34,19 +36,15 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 - Create a [Giithub App](https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps) first and get your keys then 
  add these lines in your local.properties and use it with [Secrets Gradle Plugin](https://github.com/google/secrets-gradle-plugin)
 
-`apiUrl=https://api.github.com/`
-
-`domainUrl=https://github.com/login/oauth/access_token`
-
-`oauthLoginURL = https://github.com/login/oauth/authorize`
-
-`redirectUri = HOST://SCHEME`
-
-`clientID = YOUR_CLIENT_ID`
-
-`clientSecret = YOUR_CLIENT_SECRET`
-
-`apiUrl=https://api.github.com/`
+```
+apiUrl=https://api.github.com/
+domainUrl=https://github.com/login/oauth/access_token
+oauthLoginURL = https://github.com/login/oauth/authorize
+redirectHost = YOUR_HOST   (example: if your redirect Uri of github app is like myhost://myscheme)
+redirectScheme = YOUR_SCHEME
+clientID = YOUR_CLIENT_ID
+clientSecret = YOUR_CLIENT_SECRET
+```
 
 - Now Build your project and Run
 
