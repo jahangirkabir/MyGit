@@ -6,15 +6,11 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
 import com.jahanbabu.mygit.BuildConfig
 import com.jahanbabu.mygit.R
-import com.jahanbabu.mygit.core.extension.Constants.oauthLoginURL
 import com.jahanbabu.mygit.core.platform.BaseFragment
 import com.jahanbabu.mygit.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
@@ -42,7 +38,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     override fun init() {
         binding.btnLogin.setOnClickListener {
             val intent = Intent(
-                Intent.ACTION_VIEW, Uri.parse("$oauthLoginURL?client_id=${BuildConfig.clientID}&scope=repo"))
+                Intent.ACTION_VIEW, Uri.parse("${BuildConfig.oauthLoginURL}?client_id=${BuildConfig.clientID}&scope=repo"))
             startActivity(intent)
         }
 
