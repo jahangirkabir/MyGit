@@ -34,6 +34,8 @@ Demo Project with Jetpack Libraries showing Github users list and user details.
 - [JaCoCo](https://github.com/jacoco/jacoco) for testing code coverage report 
 - [LeakCanary](https://square.github.io/leakcanary/) for memory leak detection
 
+<img align="center" src="./img/test.png" width="80%"></img> 
+
 
 ## How to use
 
