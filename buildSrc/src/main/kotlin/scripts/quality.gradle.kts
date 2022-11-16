@@ -9,18 +9,6 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
 }
 
-android {
-    lintOptions {
-        isQuiet = true
-        isAbortOnError = false
-        isIgnoreWarnings = true
-        disable("InvalidPackage")           //Some libraries have issues with this.
-        disable("OldTargetApi")             //Lint gives this warning related to SDK Beta.
-        disable("IconDensities")            //For testing purpose. This is safe to remove.
-        disable("IconMissingDensityFolder") //For testing purpose. This is safe to remove.
-    }
-}
-
 val jacocoReport by tasks.registering(JacocoReport::class) {
     group = "Quality"
     description = "Report code coverage on tests within the Android codebase."
@@ -28,12 +16,6 @@ val jacocoReport by tasks.registering(JacocoReport::class) {
 
     val buildVariantClassPath = "${Default.BUILD_FLAVOR}${Default.BUILD_TYPE.capitalize()}"
     val outputDir = "${project.buildDir}/testCoverage"
-
-    reports {
-        xml.isEnabled = true
-        html.isEnabled = true
-        html.destination = file(outputDir)
-    }
 
     classDirectories.setFrom(fileTree(project.buildDir) {
         include(
