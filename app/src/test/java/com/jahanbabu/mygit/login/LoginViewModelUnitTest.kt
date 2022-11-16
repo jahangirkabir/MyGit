@@ -58,6 +58,13 @@ class LoginViewModelTest {
     }
 
     @Test
+    fun `if no internet connection`() = runTest {
+        every { networkHandler.isNetworkAvailable() } returns false
+        loginViewModel.checkLoginStatus()
+        assertEquals(ViewState.Error("No Internet, Please connect to the Internet."), loginViewModel.viewState.value)
+    }
+
+    @Test
     fun `when logged in or session active`() = runTest {
         val truePair = Pair(true,"")
         every { networkHandler.isNetworkAvailable() } returns true
@@ -100,6 +107,27 @@ class LoginViewModelTest {
         coVerify { preferencesDataStore.setAccessToken("access_token") }
     }
 
+    @Test
+    fun `access token is null on Success`() = runTest(dispatchTimeoutMs = 2000) {
+        val truePair = Pair(true,"")
+        coEvery { loginRepository.isLoggedIn() } returns truePair
+        val accessToken = AccessToken( null,"expires_in","refresh_token","refresh_token_expires_in","error","error_description")
+        val response = ApiResponseSuccess.Entity(accessToken)
+        coEvery { loginRepository.getAccessToken("code", true) } returns response
+        loginViewModel.getAccessToken("code")
+        coVerify (exactly = 0) { preferencesDataStore.setAccessToken("") }
+    }
+
+    @Test
+    fun `refresh token is null on Success`() = runTest(dispatchTimeoutMs = 2000) {
+        val truePair = Pair(true,"")
+        coEvery { loginRepository.isLoggedIn() } returns truePair
+        val accessToken = AccessToken( "","expires_in",null,"refresh_token_expires_in","error","error_description")
+        val response = ApiResponseSuccess.Entity(accessToken)
+        coEvery { loginRepository.getAccessToken("code", true) } returns response
+        loginViewModel.getAccessToken("code")
+        coVerify (exactly = 0) { preferencesDataStore.setRefreshedToken("") }
+    }
 
     @Test
     fun `try to get access token from code for the first time Error`() = runTest(dispatchTimeoutMs = 2000) {

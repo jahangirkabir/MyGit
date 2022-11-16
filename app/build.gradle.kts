@@ -3,7 +3,6 @@ plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.kotlinKapt)
-//    id(BuildPlugins.kotlinAndroidExtensions)
     id(BuildPlugins.kotlinParcelize)
     id(BuildPlugins.androidHilt)
     id(BuildPlugins.safeargs)
@@ -54,7 +53,7 @@ dependencies {
     kapt(Libraries.hiltCompiler)
 //    kapt(Libraries.hiltXCompiler)
     kapt(Libraries.moshiKotlinCodegen)
-
+    kaptAndroidTest(Libraries.hiltCompiler)
     // Application dependencies
     implementation(Libraries.kotlinStdLib)
     implementation(Libraries.kotlinCoroutines)
@@ -77,6 +76,7 @@ dependencies {
     implementation(Libraries.glide)
     implementation(Libraries.glideTransformations)
     implementation(Libraries.hilt)
+    implementation(Libraries.hiltNavigationFragment)
     implementation(Libraries.retrofit)
     implementation(Libraries.okHttpLoggingInterceptor)
     implementation(Libraries.moshi)
@@ -87,15 +87,18 @@ dependencies {
     testImplementation(TestLibraries.mockk)
     testImplementation(TestLibraries.arcCore)
     testImplementation(TestLibraries.coroutineTest)
-    testImplementation(TestLibraries.kluent)
-    testImplementation(TestLibraries.robolectric)
 
     // Acceptance tests dependencies
+    debugImplementation(TestLibraries.fragmentTesting)
     androidTestImplementation(TestLibraries.testRunner)
     androidTestImplementation(TestLibraries.espressoCore)
+//    androidTestImplementation(TestLibraries.espressoIntents)
+//    androidTestImplementation(TestLibraries.espressoContrib)
+//    androidTestImplementation(TestLibraries.espressoAccessibility)
+//    androidTestImplementation(TestLibraries.espressoWeb)
+//    androidTestImplementation(TestLibraries.truth)
     androidTestImplementation(TestLibraries.testExtJunit)
     androidTestImplementation(TestLibraries.testRules)
-    androidTestImplementation(TestLibraries.espressoIntents)
     androidTestImplementation(TestLibraries.hiltTesting)
 
     // Development dependencies
