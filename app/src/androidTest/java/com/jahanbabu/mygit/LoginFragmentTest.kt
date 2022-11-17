@@ -1,5 +1,6 @@
 package com.jahanbabu.mygit
 
+import androidx.activity.ComponentActivity
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
@@ -24,21 +25,22 @@ import org.junit.Before
 import org.junit.Rule
 
 //@HiltAndroidTest
+//@AndroidEntryPoint
 @RunWith(AndroidJUnit4::class)
 class LoginFragmentTest {
 
 //    @get:Rule
 //    var hiltRule = HiltAndroidRule(this)
 
-//    @get : Rule
-//    var mActivityRule = ActivityScenarioRule(RouteActivity::class.java)
+    @get : Rule
+    var mActivityRule = ActivityScenarioRule(RouteActivity::class.java)
 
     private lateinit var scenario: FragmentScenario<LoginFragment>
 
     @Before
     fun setup() {
-        scenario = launchFragmentInContainer(themeResId = R.style.Theme_MyGit)
-        scenario.moveToState(Lifecycle.State.STARTED)
+//        scenario = launchFragmentInContainer(themeResId = R.style.Theme_MyGit)
+//        scenario.moveToState(Lifecycle.State.STARTED)
     }
 
     @Test
