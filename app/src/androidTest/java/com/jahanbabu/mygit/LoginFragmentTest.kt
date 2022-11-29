@@ -44,14 +44,12 @@ class LoginFragmentTest {
     }
 
     @Test
-    fun testLoginButtonClick() {
+    fun testLoginButton() {
         onView(withId(R.id.btn_login)).check(matches((isDisplayed())))
     }
 
-//    @Test
-//    fun useAppContext() {
-//        // Context of the app under test.
-//        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-//        assertEquals("com.jahanbabu.mygit", appContext.packageName)
-//    }
+    @Test
+    fun testLoginButtonClick() {
+        onView(withId(R.id.btn_login)).check(matches((isDisplayed())))
+    }
 }
